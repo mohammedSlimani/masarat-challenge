@@ -25,9 +25,9 @@ export class App extends Component {
     }
   } 
 
-componentDidMount(){
-  this.getProblems('easy');
-}
+  componentDidMount(){
+    this.getProblems('easy');
+  }
 
   render() {
     const problems = this.state.problems;
@@ -35,8 +35,7 @@ componentDidMount(){
     return (
       <div>
         <ul>
-          {this.state.loading && 'DATA IS LOADING'}
-          {!this.state.loading && 'I have the problems now'}
+          {this.state.loading? 'DATA IS LOADING':'problems are loaded'}
         </ul>
       </div>
     )
