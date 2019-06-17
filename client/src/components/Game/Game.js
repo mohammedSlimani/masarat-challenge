@@ -9,21 +9,42 @@ export class Game extends Component {
         userOp2:undefined
     }
     
+    handleOnclick=(e)=>{
+
+    }
+
     render() {
         console.log("state in the game componenet",this.state.num1);
         return (
             <div>
                 <div id='num1'>{this.state.num1}</div>
-                <div id='op1'>.</div>
+                <div id='op1'>op1</div>
                 <div id='num2'>{this.state.num2}</div>
-                <div id='op2'>{this.state.op2}</div>
-                <div id='num3'>{this.state.num3}</div>
+                {this.state.diff === 'hard' &&
+                    <>
+                        <div id='op2'>op2</div>
+                        <div id='num3'>{this.state.num3}</div>
+                    </>
+                }
                 <div id='eq'>=</div>
                 <div id='ans'>{this.state.ans}</div>
 
                 <div id='user-answer'>
-                    <input></input>
+                    choose for op1:
+                    <button onClick={this.handleOnclick}>+</button>
+                    <button onClick={this.handleOnclick}>-</button>
+                    <button onClick={this.handleOnclick}>*</button>
+                    <button onClick={this.handleOnclick}>/</button>
                 </div>
+                {this.state.diff === 'hard' && 
+                    <div id='user-answer'>
+                        choose for op2:
+                    <button onClick={this.handleOnclick}>+</button>
+                        <button onClick={this.handleOnclick}>-</button>
+                        <button onClick={this.handleOnclick}>*</button>
+                        <button onClick={this.handleOnclick}>/</button>
+                    </div>
+                }
             </div>
         )
     }
