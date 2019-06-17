@@ -18,7 +18,8 @@ export class Game extends Component {
     }
 
     handleSubmit = (e)=>{
-        if(this.state.op1 === this.state.userOp1 && (this.state.op2 === this.state.userOp2 || this.state.userOp2 ==='.') ){
+        if(this.state.op1 === this.state.userOp1 && 
+            (this.state.op2 === this.state.userOp2 || this.state.userOp2 ==='.') ){
             alert('CORRECT');
         }
         else{
@@ -30,6 +31,7 @@ export class Game extends Component {
         console.log("state in the game componenet",this.state.num1);
         return (
             <div>
+            <center>
                 <div id='num1'>{this.state.num1}</div>
                 <div id='op1'>{this.state.userOp1}</div>
                 <div id='num2'>{this.state.num2}</div>
@@ -39,6 +41,7 @@ export class Game extends Component {
                         <div id='num3'>{this.state.num3}</div>
                     </>
                 }
+                
                 <div id='eq'>=</div>
                 <div id='ans'>{this.state.ans}</div>
 
@@ -59,6 +62,7 @@ export class Game extends Component {
                     </div>
                 }
                 <button onClick ={this.handleSubmit}>ANSWER</button>
+            </center>
             </div>
         )
     }
