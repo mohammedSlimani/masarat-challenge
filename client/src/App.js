@@ -9,6 +9,7 @@ export class App extends Component {
     this.state={
       loading: true,
       problems:[],
+      diff:'easy'
     }
   }
 
@@ -26,26 +27,27 @@ export class App extends Component {
   } 
 
   componentDidMount(){
-    this.getProblems('easy');
+    this.getProblems(this.state.diff);
   }
 
   getRandom = ()=>{
     return this.state.problems[Math.floor(Math.random() * this.state.problems.length)];
   }
-/*
-  controlDiff = (diff) => {
-    this.setState({diff:diff});
-    this.getProblems();
+
+  controlDiff = (e) => {
+    this.setState({diff:e.target.value,
+     loading:true});
+    this.getProblems(this.state.diff);
   }
-*/
+
   render() {
     const problems = this.state.problems;
     console.log(problems);
     //console.log("random item", this.getRandom);
     return (
       <div>
-        <button value='easy' >EASY</button>
-        <button value='hard'>HARD</button>
+        <button onClick={this.controlDiff} value='easy'>EASY</button>
+        <button onClick={this.controlDiff} value='hard'>HARD</button>
         <ul>
           {this.state.loading? 'DATA IS LOADING':<Game prob ={this.getRandom()} />}
         </ul>

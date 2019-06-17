@@ -18,7 +18,7 @@ export class Game extends Component {
     }
 
     handleSubmit = (e)=>{
-        if(this.state.op1 === this.state.userOp1 ){
+        if(this.state.op1 === this.state.userOp1 && (this.state.op2 === this.state.userOp2 || this.state.userOp2 ==='.') ){
             alert('CORRECT');
         }
         else{
@@ -52,10 +52,10 @@ export class Game extends Component {
                 {this.state.diff === 'hard' && 
                     <div id='user-answer'>
                         choose for op2:
-                    <button value='+' onClick={this.handleOnclick}>+</button>
-                        <button value='-' onClick={this.handleOnclick}>-</button>
-                        <button value='*' onClick={this.handleOnclick}>*</button>
-                        <button value='/' onClick={this.handleOnclick}>/</button>
+                    <button value='+' onClick={this.handleOnclickOp2}>+</button>
+                    <button value='-' onClick={this.handleOnclickOp2}>-</button>
+                    <button value='*' onClick={this.handleOnclickOp2}>*</button>
+                    <button value='/' onClick={this.handleOnclickOp2}>/</button>
                     </div>
                 }
                 <button onClick ={this.handleSubmit}>ANSWER</button>
