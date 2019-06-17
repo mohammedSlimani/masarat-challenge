@@ -1,6 +1,6 @@
-
 import React, { Component } from 'react'
 import axios from 'axios';
+import Game from './components/Game/Game';
 
 
 export class App extends Component {
@@ -29,13 +29,17 @@ export class App extends Component {
     this.getProblems('easy');
   }
 
+  getRandom = ()=>{
+    return this.state.problems[Math.floor(Math.random() * this.state.problems.length)];
+  }
   render() {
     const problems = this.state.problems;
     console.log(problems);
+    //console.log("random item", this.getRandom);
     return (
       <div>
         <ul>
-          {this.state.loading? 'DATA IS LOADING':'problems are loaded'}
+          {this.state.loading? 'DATA IS LOADING':<Game prob ={this.getRandom()} />}
         </ul>
       </div>
     )
