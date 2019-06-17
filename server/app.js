@@ -2,8 +2,11 @@ const express = require('express');
 const app = express();
 const mathRoutes = require('./mathRoutes');
 const db = require('./db');
+const cors = require('cors');
 
+//app configuration
 app.use(express.static('public'));
+app.use(cors());
 
 app.get('/', function (request, response) {
     response.sendFile(__dirname + '/views/index.html');
