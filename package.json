@@ -1,0 +1,13 @@
+{
+  "name": "masarat-challenge",
+  "version": "1.0.0",
+  "description": "math api",
+  "main": "app.js",
+  "repository": "https://github.com/mohammedSlimani/masarat-challenge.git",
+  "author": "Mohammed slimani <slimani.med.21@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
