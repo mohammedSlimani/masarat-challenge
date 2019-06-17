@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Masarat Challenge</title>
 </head>
+
 <body>
-    <header><h1>Math prob</h1></header>
+    <header>
+        <h1>Math prob</h1>
+    </header>
     <main>
         <header>
-            choose the difficulty 
+            choose the difficulty
         </header>
-        <form action="/" method="post">
-            <label><input type="radio" name="difficulty" value="easy" checked />EASY</label>
-            <label><input type="radio" name="difficulty" value="hard" />HARD</label>
-                
-            <button type="button" name="submit">SELECT</button>
+
+        <form action="/api/easy" method="get">
+            <button type="button" name="submit">EASY</button>
+        </form>
+
+        <form action="/api/hard" method="get">
+            <button type="button" name="submit">hard</button>
         </form>
     </main>
 </body>
+
 </html>
