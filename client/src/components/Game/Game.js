@@ -38,8 +38,8 @@ export class Game extends Component {
                     <div id='num2' style={styles}>{this.state.num2}</div>
                 {this.state.diff === 'hard' &&
                     <>
-                        <div id='op2'>{this.state.userOp2}</div>
-                        <div id='num3'>{this.state.num3}</div>
+                        <div id='op2' style={styles}>{this.state.userOp2}</div>
+                        <div id='num3' style={styles}>{this.state.num3}</div>
                     </>
                 }
                 
