@@ -10,7 +10,7 @@ export class Game extends Component {
     }
     
     handleOnclick=(e)=>{
-
+        console.log(e.value);
     }
 
     render() {
@@ -39,10 +39,10 @@ export class Game extends Component {
                 {this.state.diff === 'hard' && 
                     <div id='user-answer'>
                         choose for op2:
-                    <button onClick={this.handleOnclick}>+</button>
-                        <button onClick={this.handleOnclick}>-</button>
-                        <button onClick={this.handleOnclick}>*</button>
-                        <button onClick={this.handleOnclick}>/</button>
+                    <button value='+' onClick={this.handleOnclick}>+</button>
+                        <button value='-' onClick={this.handleOnclick}>-</button>
+                        <button value='*' onClick={this.handleOnclick}>*</button>
+                        <button value='/' onClick={this.handleOnclick}>/</button>
                     </div>
                 }
             </div>

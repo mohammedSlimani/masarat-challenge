@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "math api",
   "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "repository": "https://github.com/mohammedSlimani/masarat-challenge.git",
   "author": "Mohammed slimani <slimani.med.21@gmail.com>",
   "license": "MIT",

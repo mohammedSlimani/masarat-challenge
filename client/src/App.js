@@ -32,12 +32,20 @@ export class App extends Component {
   getRandom = ()=>{
     return this.state.problems[Math.floor(Math.random() * this.state.problems.length)];
   }
+/*
+  controlDiff = (diff) => {
+    this.setState({diff:diff});
+    this.getProblems();
+  }
+*/
   render() {
     const problems = this.state.problems;
     console.log(problems);
     //console.log("random item", this.getRandom);
     return (
       <div>
+        <button >EASY</button>
+        <button >HARD</button>
         <ul>
           {this.state.loading? 'DATA IS LOADING':<Game prob ={this.getRandom()} />}
         </ul>
