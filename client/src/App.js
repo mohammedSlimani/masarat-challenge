@@ -44,8 +44,8 @@ export class App extends Component {
     //console.log("random item", this.getRandom);
     return (
       <div>
-        <button >EASY</button>
-        <button >HARD</button>
+        <button value='easy' >EASY</button>
+        <button value='hard'>HARD</button>
         <ul>
           {this.state.loading? 'DATA IS LOADING':<Game prob ={this.getRandom()} />}
         </ul>
