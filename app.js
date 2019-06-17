@@ -1,14 +1,27 @@
-const express  = require('express');
-const cors = require('cors')
+const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-const mathRoutes = require('./math');
+const mathRoutes = require('./mathRoutes');
+const db = require('./db');
 
-//configuration of the app
-app.use('/public', express.static(process.cwd() + '/public'));
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cors());
+app.use(express.static('public'));
 
-//routes
-app.use('/',mathRoutes);
-app.listen(3000,()=>console.log('app running at 3000'));
+app.get('/', function (request, response) {
+    response.sendFile(__dirname + '/views/index.html');
+});
+
+app.use('/api', mathRoutes);
+const math = {
+    num1: 5,
+    num2: 12,
+    num3: 10,
+    ans: 7,
+    op1: '+',
+    op2: '-',
+    diff: 'hard'
+};
+//db.saveMathProblem(math)
+
+// listen for requests :)
+const listener = app.listen(process.env.PORT, function () {
+    console.log('Your app is listening on port ' + listener.address().port);
+});
