@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Game from './components/Game/Game';
-
+import easy from './eval';
 
 export class App extends Component {
   constructor(){
@@ -49,7 +49,7 @@ export class App extends Component {
         <button onClick={this.controlDiff} value='easy'>EASY</button>
         <button onClick={this.controlDiff} value='hard'>HARD</button>
         <ul>
-          {this.state.loading? 'DATA IS LOADING':<Game prob ={this.getRandom()} />}
+          {this.state.loading? 'DATA IS LOADING':<Game prob ={easy()} />}
         </ul>
       </div>
     )
