@@ -1,6 +1,10 @@
 {
   "name": "masarat-challenge",
   "version": "1.0.0",
+  "engines": {
+    "npm": "6.9.0",
+    "node": "8.10.0"
+  },
   "description": "math api",
   "main": "app.js",
   "scripts": {
